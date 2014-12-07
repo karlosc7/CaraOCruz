@@ -2,8 +2,12 @@ package es.delcerro.karlosc.caraocruz;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import java.util.Random;
 
 
 public class LanzarMoneda extends ActionBarActivity {
@@ -12,6 +16,26 @@ public class LanzarMoneda extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lanzar_moneda);
+        //Toast toast = Toast.makeText(this, "Hola mundo", Toast.LENGTH_LONG);
+        //toast.show();
+        String hola = "Hola!!!";
+        Random rand = new Random();
+        int num ;
+        for(int i = 0; i < 10; i++) {
+            try {
+                num= rand.nextInt(2);
+                if (num == 1)
+                    Toast.makeText(this, "CARA", Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(this, "CRUZ", Toast.LENGTH_LONG).show();
+
+            } catch (Exception e) {
+
+            }
+        }
+        final  String TAG =
+                LanzarMoneda.class.getSimpleName();
+        Log.d(TAG, "mensaje de depuracion");
     }
 
 
